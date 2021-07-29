@@ -1,0 +1,171 @@
+/* NunitoSans */
+$nunito-sans-path: '/src/assets/fonts/NunitoSans';
+
+@font-face {
+  font-family: 'NunitoSans';
+  src: url('#{$nunito-sans-path}/NunitoSans-extralight.woff2') format('woff2'),
+    url('#{$nunito-sans-path}/NunitoSans-extralight.woff') format('woff'),
+    url('#{$nunito-sans-path}/NunitoSans-extralight.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NunitoSans';
+  src: url('#{$nunito-sans-path}/NunitoSans-extralightitalic.woff2')
+      format('woff2'),
+    url('#{$nunito-sans-path}/NunitoSans-extralightitalic.woff') format('woff'),
+    url('#{$nunito-sans-path}/NunitoSans-extralightitalic.ttf')
+      format('truetype');
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NunitoSans';
+  src: url('#{$nunito-sans-path}/NunitoSans-extralight.woff2') format('woff2'),
+    url('#{$nunito-sans-path}/NunitoSans-extralight.woff') format('woff'),
+    url('#{$nunito-sans-path}/NunitoSans-extralight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NunitoSans';
+  src: url('#{$nunito-sans-path}/NunitoSans-extralightitalic.woff2')
+      format('woff2'),
+    url('#{$nunito-sans-path}/NunitoSans-extralightitalic.woff') format('woff'),
+    url('#{$nunito-sans-path}/NunitoSans-extralightitalic.ttf')
+      format('truetype');
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NunitoSans';
+  src: url('#{$nunito-sans-path}/NunitoSans-light.woff2') format('woff2'),
+    url('#{$nunito-sans-path}/NunitoSans-light.woff') format('woff'),
+    url('#{$nunito-sans-path}/NunitoSans-light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NunitoSans';
+  src: url('#{$nunito-sans-path}/NunitoSans-lightitalic.woff2') format('woff2'),
+    url('#{$nunito-sans-path}/NunitoSans-lightitalic.woff') format('woff'),
+    url('#{$nunito-sans-path}/NunitoSans-lightitalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NunitoSans';
+  src: url('#{$nunito-sans-path}/NunitoSans-regular.woff2') format('woff2'),
+    url('#{$nunito-sans-path}/NunitoSans-regular.woff') format('woff'),
+    url('#{$nunito-sans-path}/NunitoSans-regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NunitoSans';
+  src: url('#{$nunito-sans-path}/NunitoSans-italic.woff2') format('woff2'),
+    url('#{$nunito-sans-path}/NunitoSans-italic.woff') format('woff'),
+    url('#{$nunito-sans-path}/NunitoSans-italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NunitoSans';
+  src: url('#{$nunito-sans-path}/NunitoSans-semibold.woff2') format('woff2'),
+    url('#{$nunito-sans-path}/NunitoSans-semibold.woff') format('woff'),
+    url('#{$nunito-sans-path}/NunitoSans-semibold.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NunitoSans';
+  src: url('#{$nunito-sans-path}/NunitoSans-semibolditalic.woff2')
+      format('woff2'),
+    url('#{$nunito-sans-path}/NunitoSans-semibolditalic.woff') format('woff'),
+    url('#{$nunito-sans-path}/NunitoSans-semibolditalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NunitoSans';
+  src: url('#{$nunito-sans-path}/NunitoSans-bold.woff2') format('woff2'),
+    url('#{$nunito-sans-path}/NunitoSans-bold.woff') format('woff'),
+    url('#{$nunito-sans-path}/NunitoSans-bold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NunitoSans';
+  src: url('#{$nunito-sans-path}/NunitoSans-bolditalic.woff2') format('woff2'),
+    url('#{$nunito-sans-path}/NunitoSans-bolditalic.woff') format('woff'),
+    url('#{$nunito-sans-path}/NunitoSans-bolditalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NunitoSans';
+  src: url('#{$nunito-sans-path}/NunitoSans-bold.woff2') format('woff2'),
+    url('#{$nunito-sans-path}/NunitoSans-bold.woff') format('woff'),
+    url('#{$nunito-sans-path}/NunitoSans-bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NunitoSans';
+  src: url('#{$nunito-sans-path}/NunitoSans-bolditalic.woff2') format('woff2'),
+    url('#{$nunito-sans-path}/NunitoSans-bolditalic.woff') format('woff'),
+    url('#{$nunito-sans-path}/NunitoSans-bolditalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NunitoSans';
+  src: url('#{$nunito-sans-path}/NunitoSans-extrabold.woff2') format('woff2'),
+    url('#{$nunito-sans-path}/NunitoSans-extrabold.woff') format('woff'),
+    url('#{$nunito-sans-path}/NunitoSans-extrabold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NunitoSans';
+  src: url('#{$nunito-sans-path}/NunitoSans-extrabolditalic.woff2')
+      format('woff2'),
+    url('#{$nunito-sans-path}/NunitoSans-extrabolditalic.woff') format('woff'),
+    url('#{$nunito-sans-path}/NunitoSans-extrabolditalic.ttf')
+      format('truetype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'NunitoSans';
+  src: url('#{$nunito-sans-path}/NunitoSans-black.woff2') format('woff2'),
+    url('#{$nunito-sans-path}/NunitoSans-black.woff') format('woff'),
+    url('#{$nunito-sans-path}/NunitoSans-black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NunitoSans';
+  src: url('#{$nunito-sans-path}/NunitoSans-blackitalic.woff2') format('woff2'),
+    url('#{$nunito-sans-path}/NunitoSans-blackitalic.woff') format('woff'),
+    url('#{$nunito-sans-path}/NunitoSans-blackitalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
