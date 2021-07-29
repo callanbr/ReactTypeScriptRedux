@@ -1,7 +1,7 @@
 {
   "name": "react-typescript-redux",
   "version": "1.0.0",
-  "description": "Boilerplate for React TypeScript Webpack",
+  "description": "Boilerplate for React TypeScript Redux",
   "main": "index.js",
   "repository": "https://github.com/callanbr/ReactTypeScriptRedux.git",
   "author": "callanbr",

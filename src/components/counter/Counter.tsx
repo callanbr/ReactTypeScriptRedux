@@ -5,7 +5,6 @@ import {
   incrementAmount,
   decrementOne,
 } from '../../redux/features/counterSlice';
-import styles from './counter.module.scss';
 
 export const Counter = () => {
   const [inputValue, setInputValue] = useState<number>(0);
@@ -19,22 +18,15 @@ export const Counter = () => {
   return (
     <div>
       <h1>{count}</h1>
-      <button className={styles.coolButton} onClick={handleIncrementOne}>
-        Increment One
-      </button>
-      <button className={styles.buttonDefault} onClick={handleDecrementOne}>
-        Decrement One
-      </button>
+      <button onClick={handleIncrementOne}>Increment One</button>
+      <button onClick={handleDecrementOne}>Decrement One</button>
       <br />
       <input
-        className={styles.inputDefault}
         type="number"
         placeholder="Enter a number"
         onChange={(e) => setInputValue(parseInt(e.target.value) || 0)}
       />
-      <button className={styles.buttonDefault} onClick={handleIncrementAmount}>
-        Increment Amount
-      </button>
+      <button onClick={handleIncrementAmount}>Increment Amount</button>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import placeholderImage from '../../assets/images/placeholder.jpg';
 
-export const Home = () => {
+export const HomeView = () => {
   const title = 'Home';
   return (
     <>

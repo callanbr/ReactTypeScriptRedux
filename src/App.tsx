@@ -8,7 +8,7 @@ export const App = () => {
       <Router basename="/">
         <Link to="/"> Home</Link>
         <Link to="/counter"> CounterPage</Link>
-        <Link to="/notes"> Notes</Link>
+        <Link to="/photos"> PhotosAPI</Link>
         <Routes />
       </Router>
     </div>
