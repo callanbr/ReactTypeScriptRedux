@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 import { useRootDispatch, useRootState } from '../../redux/hooks';
 import {
   incrementOne,
@@ -17,7 +17,7 @@ export const Counter = () => {
 
   return (
     <div>
-      <h1>{count}</h1>
+      <h2>{count}</h2>
       <button onClick={handleIncrementOne}>Increment One</button>
       <button onClick={handleDecrementOne}>Decrement One</button>
       <br />
