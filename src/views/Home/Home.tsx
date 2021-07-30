@@ -10,6 +10,7 @@ export const HomeView = () => {
           <li>{process.env.NODE_ENV}</li>
           <li>{process.env.server}</li>
         </ul>
+        <hr />
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
           voluptates, nostrum minima repellendus aut et ducimus voluptatibus qui
@@ -24,7 +25,8 @@ export const HomeView = () => {
           nemo placeat, labore veniam corrupti voluptatem officiis in
           voluptatibus nisi culpa voluptas aliquid.
         </p>
-        <img src={placeholderImage} alt="placeholder" />
+        <br />
+        <img src={placeholderImage} alt="placeholder" height={200} />
       </div>
     </>
   );
