@@ -3,7 +3,7 @@ import { useFetchPhotosQuery } from '../../redux/features/photoApiSlice';
 
 export const Photos = () => {
   const [limit, setLimit] = useState(10);
-  const { data = [], isFetching } = useFetchPhotosQuery(limit);
+  const { data = [] } = useFetchPhotosQuery(limit);
   return (
     <>
       <div>

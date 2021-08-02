@@ -1,19 +1,19 @@
-import { useState } from "react";
+import { useState } from 'react';
 import { useRootDispatch, useRootState } from '../../redux/hooks';
 import {
   incrementOne,
-  incrementAmount,
+  changeAmount,
   decrementOne,
 } from '../../redux/features/counterSlice';
 
 export const Counter = () => {
   const [inputValue, setInputValue] = useState<number>(0);
-  const count = useRootState((state) => state.counter.value);
+  const count = useRootState((state) => state.counter.count);
   const dispatch = useRootDispatch();
 
   const handleIncrementOne = () => dispatch(incrementOne());
   const handleDecrementOne = () => dispatch(decrementOne());
-  const handleIncrementAmount = () => dispatch(incrementAmount(inputValue));
+  const handleIncrementAmount = () => dispatch(changeAmount(inputValue));
 
   return (
     <div>
@@ -23,10 +23,11 @@ export const Counter = () => {
       <br />
       <input
         type="number"
+        name="amountToChange"
         placeholder="Enter a number"
         onChange={(e) => setInputValue(parseInt(e.target.value) || 0)}
       />
-      <button onClick={handleIncrementAmount}>Increment Amount</button>
+      <button onClick={handleIncrementAmount}>Change Amount By</button>
     </div>
   );
 };
