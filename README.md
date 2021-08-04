@@ -31,3 +31,4 @@ Boilerplate for React TypeScript Redux
 - Folder Structure
   - Sections vs Components?
   - Shared Sections?
+- Change Box component to container or update grid container with "main container" features.
