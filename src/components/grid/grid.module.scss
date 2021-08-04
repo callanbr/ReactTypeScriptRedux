@@ -1,0 +1,107 @@
+@use 'sass:math';
+
+$spacing: (
+  'xs': 3px,
+  'sm': 6px,
+  'md': 12px,
+  'lg': 18px,
+  'xl': 24px,
+);
+
+$breakpoints: (
+  'xs': 0,
+  'sm': 26em,
+  'md': 48em,
+  'lg': 64em,
+  'xl': 80em,
+);
+
+$justifyContent: (
+  'start': flex-start,
+  'end': flex-end,
+  'center': center,
+  'between': space-between,
+  'around': space-around,
+);
+
+$alignItems: (
+  'start': flex-start,
+  'end': flex-end,
+  'center': center,
+  'baseline': baseline,
+  'stretch': stretch,
+);
+
+@mixin breakpoint($name) {
+  @media screen and (min-width: map-get($breakpoints, $name)) {
+    @content;
+  }
+}
+
+.Grid {
+  &Container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &Item {
+    display: block;
+  }
+  @for $i from 1 to 13 {
+    &-xs-#{$i} {
+      flex-basis: math.div($i, 12) * 100%;
+    }
+  }
+
+  @include breakpoint('sm') {
+    @for $i from 1 to 13 {
+      &-sm-#{$i} {
+        flex-basis: math.div($i, 12) * 100%;
+      }
+    }
+  }
+
+  @include breakpoint('md') {
+    @for $i from 1 to 13 {
+      &-md-#{$i} {
+        flex-basis: math.div($i, 12) * 100%;
+      }
+    }
+  }
+
+  @include breakpoint('lg') {
+    @for $i from 1 to 13 {
+      &-lg-#{$i} {
+        flex-basis: math.div($i, 12) * 100%;
+      }
+    }
+  }
+
+  @include breakpoint('xl') {
+    @for $i from 1 to 13 {
+      &-xl-#{$i} {
+        flex-basis: math.div($i, 12) * 100%;
+      }
+    }
+  }
+
+  @each $name, $value in $spacing {
+    &Spacing-#{$name} {
+      margin: -$value;
+    }
+    &Spacing-#{$name} > &Item {
+      padding: $value;
+    }
+  }
+
+  @each $name, $value in $justifyContent {
+    &JustifyContent-#{$name} {
+      justify-content: $value;
+    }
+  }
+
+  @each $name, $value in $alignItems {
+    &AlignItems-#{$name} {
+      align-items: $value;
+    }
+  }
+}

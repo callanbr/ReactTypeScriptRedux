@@ -9,6 +9,7 @@ export const App = () => {
         <Link to="/"> Home</Link>
         <Link to="/counter"> CounterWithTests</Link>
         <Link to="/photos"> PhotosAPI</Link>
+        <Link to="/grid"> Grid</Link>
         <Routes />
       </Router>
     </div>
