@@ -26,6 +26,8 @@ Boilerplate for React TypeScript Redux
 - Classnames
 - Husky
 
+### Todo
+
 - Add dark mode
 - Clean scss setup
 - Folder Structure
