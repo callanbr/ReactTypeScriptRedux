@@ -1,0 +1,54 @@
+@use "sass:selector";
+
+.theme {
+  &Dark {
+    background-color: #333;
+    color: #fff;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #fff;
+    }
+  }
+  &Blue {
+    background-color: #00bcd4;
+    color: #fff;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #fff;
+    }
+  }
+  &Green {
+    background-color: #2ecc71;
+    color: #fff;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #fff;
+    }
+  }
+  &Light {
+    background-color: white;
+    color: #333;
+    width: 100vw;
+    height: 100vh;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #333;
+    }
+  }
+}

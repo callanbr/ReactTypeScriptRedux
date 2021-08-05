@@ -1,42 +1,5 @@
 @use 'sass:math';
-
-$spacing: (
-  'xs': 3px,
-  'sm': 6px,
-  'md': 12px,
-  'lg': 18px,
-  'xl': 24px,
-);
-
-$breakpoints: (
-  'xs': 0,
-  'sm': 26em,
-  'md': 48em,
-  'lg': 64em,
-  'xl': 80em,
-);
-
-$justifyContent: (
-  'start': flex-start,
-  'end': flex-end,
-  'center': center,
-  'between': space-between,
-  'around': space-around,
-);
-
-$alignItems: (
-  'start': flex-start,
-  'end': flex-end,
-  'center': center,
-  'baseline': baseline,
-  'stretch': stretch,
-);
-
-@mixin breakpoint($name) {
-  @media screen and (min-width: map-get($breakpoints, $name)) {
-    @content;
-  }
-}
+@use "src/assets/styles" as styles;
 
 .Grid {
   &Container {
@@ -52,7 +15,7 @@ $alignItems: (
     }
   }
 
-  @include breakpoint('sm') {
+  @include styles.breakpoint('sm') {
     @for $i from 1 to 13 {
       &-sm-#{$i} {
         flex-basis: math.div($i, 12) * 100%;
@@ -60,7 +23,7 @@ $alignItems: (
     }
   }
 
-  @include breakpoint('md') {
+  @include styles.breakpoint('md') {
     @for $i from 1 to 13 {
       &-md-#{$i} {
         flex-basis: math.div($i, 12) * 100%;
@@ -68,7 +31,7 @@ $alignItems: (
     }
   }
 
-  @include breakpoint('lg') {
+  @include styles.breakpoint('lg') {
     @for $i from 1 to 13 {
       &-lg-#{$i} {
         flex-basis: math.div($i, 12) * 100%;
@@ -76,7 +39,7 @@ $alignItems: (
     }
   }
 
-  @include breakpoint('xl') {
+  @include styles.breakpoint('xl') {
     @for $i from 1 to 13 {
       &-xl-#{$i} {
         flex-basis: math.div($i, 12) * 100%;
@@ -84,7 +47,7 @@ $alignItems: (
     }
   }
 
-  @each $name, $value in $spacing {
+  @each $name, $value in styles.$spacing {
     &Spacing-#{$name} {
       margin: -$value;
     }
@@ -93,13 +56,13 @@ $alignItems: (
     }
   }
 
-  @each $name, $value in $justifyContent {
+  @each $name, $value in styles.$justifyContent {
     &JustifyContent-#{$name} {
       justify-content: $value;
     }
   }
 
-  @each $name, $value in $alignItems {
+  @each $name, $value in styles.$alignItems {
     &AlignItems-#{$name} {
       align-items: $value;
     }
