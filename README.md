@@ -28,7 +28,8 @@ Boilerplate for React TypeScript Redux
 
 ### Todo
 
-- Add dark mode
+- Theme scss mixins / variables
+- Theme added to redux?
 - Clean scss setup
 - Folder Structure
   - Sections vs Components?
