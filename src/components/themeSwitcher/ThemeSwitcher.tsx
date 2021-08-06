@@ -1,20 +1,17 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { useRootDispatch, useRootState } from '../../redux/hooks';
+import { changeTheme } from '../../redux/features/themeSlice';
 import styles from './themeSwitcher.module.scss';
 
 const ThemeSwitcher = () => {
-  type Themes = any;
+  const rootTheme = useRootState((state) => state.themeChanger.currentTheme);
+  const dispatch = useRootDispatch();
+
+  const handleThemeChange = (theme: string) => dispatch(changeTheme(theme));
 
   useEffect(() => {
-    const currentThemeColor = localStorage.getItem('themeColor');
-    if (currentThemeColor) {
-      document.body.className = currentThemeColor;
-    }
-  }, []);
-
-  const handleThemeChange = (theme: Themes) => {
-    localStorage.setItem('themeColor', theme);
-    document.body.className = theme;
-  };
+    document.body.className = rootTheme;
+  }, [rootTheme]);
 
   return (
     <>

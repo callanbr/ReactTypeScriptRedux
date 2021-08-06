@@ -13,7 +13,7 @@ export const Counter = () => {
 
   const handleIncrementOne = () => dispatch(incrementOne());
   const handleDecrementOne = () => dispatch(decrementOne());
-  const handleIncrementAmount = () => dispatch(changeAmount(inputValue));
+  const handleChangeAmount = () => dispatch(changeAmount(inputValue));
 
   return (
     <div>
@@ -27,7 +27,7 @@ export const Counter = () => {
         placeholder="Enter a number"
         onChange={(e) => setInputValue(parseInt(e.target.value) || 0)}
       />
-      <button onClick={handleIncrementAmount}>Change Amount By</button>
+      <button onClick={handleChangeAmount}>Change Amount By</button>
     </div>
   );
 };

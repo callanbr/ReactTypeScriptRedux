@@ -1,5 +1,5 @@
 import { Box } from '../../components/box/Box';
-import { Grid } from '../../components/grid/Grix';
+import { Grid } from '../../components/grid/Grid';
 
 export const GridView = () => {
   return (
