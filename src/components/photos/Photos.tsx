@@ -22,7 +22,11 @@ export const Photos = () => {
       <ul>
         {data.map((photo) => (
           <li key={photo.id}>
-            <img src={photo.thumbnailUrl} alt={photo.title} />
+            <img
+              src={photo.thumbnailUrl}
+              alt={photo.title}
+              style={{ width: '200px' }}
+            />
           </li>
         ))}
       </ul>

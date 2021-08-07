@@ -15,17 +15,14 @@ const ThemeSwitcher = () => {
 
   return (
     <>
-      <button onClick={() => handleThemeChange(styles.themeLight)}>
-        Toggle Light
+      <button onClick={() => handleThemeChange(styles.themeDefault)}>
+        Toggle Default
       </button>
       <button onClick={() => handleThemeChange(styles.themeDark)}>
         Toggle Dark
       </button>
-      <button onClick={() => handleThemeChange(styles.themeBlue)}>
-        Toggle Blue
-      </button>
-      <button onClick={() => handleThemeChange(styles.themeGreen)}>
-        Toggle Green
+      <button onClick={() => handleThemeChange(styles.themeColorful)}>
+        Toggle Colorful
       </button>
     </>
   );

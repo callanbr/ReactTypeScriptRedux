@@ -9,8 +9,22 @@
   &Item {
     display: block;
   }
+
+  &Raised {
+    box-shadow: 0px 0px 15px 2px rgba(153, 153, 153, 0.25);
+    border-radius: 5px;
+    margin: 20px;
+  }
+  &Ruler {
+    border: 2px solid black;
+  }
+  &Ruler > &Item {
+    border: 2px solid red;
+  }
+
   @for $i from 1 to 13 {
-    &-xs-#{$i} {
+    &-xs-#{$i},
+    &-col-#{$i} {
       flex-basis: math.div($i, 12) * 100%;
     }
   }
@@ -48,8 +62,8 @@
   }
 
   @each $name, $value in styles.$spacing {
-    &Spacing-#{$name} {
-      margin: -$value;
+    &FullWidth {
+      margin: 0 0 -$value;
     }
     &Spacing-#{$name} > &Item {
       padding: $value;
@@ -65,6 +79,12 @@
   @each $name, $value in styles.$alignItems {
     &AlignItems-#{$name} {
       align-items: $value;
+    }
+  }
+
+  @each $name, $value in styles.$alignSelf {
+    &AlignSelf-#{$name} {
+      align-self: $value;
     }
   }
 }

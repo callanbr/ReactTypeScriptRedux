@@ -7,15 +7,12 @@ $spacing: (
 );
 
 $breakpoints: (
+  'col': 0,
   'xs': 0,
   'sm': 26em,
-  // 16px font = 420px
   'md': 48em,
-  // 16px font = 768px
   'lg': 64em,
-  // 16px font = 1024px
   'xl': 80em,
-  // 16px font = 1280px
 );
 
 $justifyContent: (

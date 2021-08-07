@@ -1,103 +1,70 @@
 @use "sass:selector";
+@use "colors";
+@use 'interface';
 
-.theme {
-  &Light {
-    background-color: white;
-    color: #333;
+@mixin theme(
+  $name,
+  $primary-text,
+  $theme-text,
+  $theme-color,
+  $theme-background,
+  $theme-accent
+) {
+  .#{$name} {
+    background-color: $theme-background;
+    color: $primary-text;
     h1,
     h2,
     h3,
     h4,
     h5,
     h6 {
-      color: #333;
+      color: $theme-text;
     }
     button,
     input,
     select,
     a {
-      background-color: white;
-      border: 1px solid #333;
-      color: #333;
+      @include interface.default;
+      background-color: $theme-color;
+      border: 1px solid $theme-accent;
+      color: $primary-text;
       text-decoration: none;
+      margin: auto 5px;
     }
     a:hover,
     button:hover {
-      background-color: #333;
-      border: 1px solid white;
-      color: white;
-    }
-  }
-  &Dark {
-    background-color: #333;
-    color: #fff;
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      color: #fff;
-    }
-    button,
-    input,
-    select {
-      background-color: #333;
-      border: 1px solid #fff;
-      color: #fff;
-    }
-    button:hover {
-      background-color: #fff;
-      border: 1px solid #333;
-      color: #333;
-    }
-  }
-  &Blue {
-    background-color: #00bcd4;
-    color: #fff;
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      color: #fff;
-    }
-    button,
-    input,
-    select {
-      background-color: #00bcd4;
-      border: 1px solid #fff;
-      color: #fff;
-    }
-    button:hover {
-      background-color: #fff;
-      border: 1px solid #00bcd4;
-      color: #00bcd4;
-    }
-  }
-  &Green {
-    background-color: #2ecc71;
-    color: #fff;
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      color: #fff;
-    }
-    button,
-    input,
-    select {
-      background-color: #2ecc71;
-      border: 1px solid #fff;
-      color: #fff;
-    }
-    button:hover {
-      background-color: #fff;
-      border: 1px solid #2ecc71;
-      color: #2ecc71;
+      cursor: pointer;
+      background-color: $theme-accent;
+      border: 1px solid $theme-color;
+      color: $primary-text;
     }
   }
 }
+
+@include theme(
+  'themeDefault',
+  colors.$darkColor,
+  colors.$default-text,
+  colors.$default-color,
+  colors.$default-background,
+  colors.$default-accent
+);
+
+@include theme(
+  'themeDark',
+  colors.$lightColor,
+  colors.$dark-text,
+  colors.$dark-color,
+  colors.$dark-background,
+  colors.$dark-accent
+);
+
+@include theme(
+  'themeColorful',
+  colors.$lightColor,
+  colors.$colorful-text,
+  colors.$colorful-color,
+  colors.$colorful-background,
+  colors.$colorful-accent
+);

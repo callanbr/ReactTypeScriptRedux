@@ -2,19 +2,9 @@
 
 @mixin default {
   border-radius: 3px;
-  font-size: 14px;
-  padding: 10px 20px;
-}
-
-button,
-a {
-  @include default;
-  cursor: pointer;
-}
-
-input,
-select {
-  @include default;
+  font-size: 16px;
+  padding: 5px 10px;
+  display: inline-block;
 }
 
 li {
