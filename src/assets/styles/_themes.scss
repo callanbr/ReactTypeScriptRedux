@@ -1,6 +1,33 @@
 @use "sass:selector";
 
 .theme {
+  &Light {
+    background-color: white;
+    color: #333;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #333;
+    }
+    button,
+    input,
+    select,
+    a {
+      background-color: white;
+      border: 1px solid #333;
+      color: #333;
+      text-decoration: none;
+    }
+    a:hover,
+    button:hover {
+      background-color: #333;
+      border: 1px solid white;
+      color: white;
+    }
+  }
   &Dark {
     background-color: #333;
     color: #fff;
@@ -11,6 +38,18 @@
     h5,
     h6 {
       color: #fff;
+    }
+    button,
+    input,
+    select {
+      background-color: #333;
+      border: 1px solid #fff;
+      color: #fff;
+    }
+    button:hover {
+      background-color: #fff;
+      border: 1px solid #333;
+      color: #333;
     }
   }
   &Blue {
@@ -24,6 +63,18 @@
     h6 {
       color: #fff;
     }
+    button,
+    input,
+    select {
+      background-color: #00bcd4;
+      border: 1px solid #fff;
+      color: #fff;
+    }
+    button:hover {
+      background-color: #fff;
+      border: 1px solid #00bcd4;
+      color: #00bcd4;
+    }
   }
   &Green {
     background-color: #2ecc71;
@@ -36,19 +87,17 @@
     h6 {
       color: #fff;
     }
-  }
-  &Light {
-    background-color: white;
-    color: #333;
-    width: 100vw;
-    height: 100vh;
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      color: #333;
+    button,
+    input,
+    select {
+      background-color: #2ecc71;
+      border: 1px solid #fff;
+      color: #fff;
+    }
+    button:hover {
+      background-color: #fff;
+      border: 1px solid #2ecc71;
+      color: #2ecc71;
     }
   }
 }

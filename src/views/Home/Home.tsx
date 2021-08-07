@@ -1,33 +1,35 @@
 import placeholderImage from '../../assets/images/placeholder.jpg';
+import { Grid } from '../../components/grid/Grid';
 
 export const HomeView = () => {
-  const title = 'Home';
+  const title = 'React Boilerplate';
   return (
     <>
-      <div>
-        <h1>{title}</h1>
-        <ul>
-          <li>{process.env.NODE_ENV}</li>
-          <li>{process.env.server}</li>
-        </ul>
-        <hr />
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
-          voluptates, nostrum minima repellendus aut et ducimus voluptatibus qui
-          quaerat. Eos incidunt inventore aliquam, accusantium quibusdam velit
-          exercitationem magnam quidem delectus autem repudiandae, libero
-          repellat voluptatum officiis. Ducimus voluptatem voluptatibus, saepe
-          libero nobis odit quas cupiditate quibusdam, itaque cum ea deleniti
-          aut excepturi minus? Perspiciatis veniam est mollitia sequi aliquam
-          animi tempora, sapiente maiores ex aperiam doloremque esse amet,
-          molestiae aspernatur perferendis corporis consequuntur nam expedita
-          soluta ipsa! Officia non maiores natus et, libero amet hic vel aut
-          nemo placeat, labore veniam corrupti voluptatem officiis in
-          voluptatibus nisi culpa voluptas aliquid.
-        </p>
-        <br />
-        <img src={placeholderImage} alt="placeholder" height={200} />
-      </div>
+      <Grid container spacing="xl" justifyContent="center" alignItems="center">
+        <Grid item sm={10} lg={4}>
+          <h1>{title}</h1>
+          <h4>Environment Variables</h4>
+          <ul>
+            <li>- Environment: {process.env.NODE_ENV}</li>
+            <li>- Server: {process.env.server}</li>
+          </ul>
+          <h4>Features</h4>
+          <ul>
+            <li>- TypeScript</li>
+            <li>- Redux toolkit</li>
+            <li>- Babel</li>
+            <li>- Webpack</li>
+            <li>- SCSS Modules</li>
+            <li>- React Testing Library</li>
+            <li>- Jest</li>
+            <li>- ESLint</li>
+            <li>- Prettier</li>
+          </ul>
+        </Grid>
+        <Grid item sm={10} lg={4}>
+          <img src={placeholderImage} alt="placeholder" />
+        </Grid>
+      </Grid>
     </>
   );
 };

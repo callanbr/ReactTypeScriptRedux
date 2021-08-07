@@ -6,22 +6,17 @@
   padding: 10px 20px;
 }
 
-button {
+button,
+a {
   @include default;
-  background-color: colors.$light;
-  border: 1px solid colors.$light-primary;
-  color: colors.$light-primary;
-}
-
-button:hover {
-  background-color: colors.$dark-secondary;
-  border: 1px solid colors.$dark;
-  color: colors.$light;
+  cursor: pointer;
 }
 
 input,
 select {
   @include default;
-  background-color: colors.$light;
-  border: 1px solid colors.$light-primary;
+}
+
+li {
+  list-style: none;
 }
