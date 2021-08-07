@@ -11,6 +11,7 @@ export const Navbar = () => {
           <Link to="/counter"> CounterWithTests</Link>
           <Link to="/photos"> PhotosAPI</Link>
           <Link to="/grid"> Grid</Link>
+          <Link to="/newgrid"> NewGrid</Link>
         </Grid>
         <Grid item sm={12} md={4}>
           <ThemeSwitcher />

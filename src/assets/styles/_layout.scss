@@ -34,6 +34,14 @@ $alignItems: (
   'stretch': stretch,
 );
 
+$alignSelf: (
+  'start': flex-start,
+  'end': flex-end,
+  'center': center,
+  'baseline': baseline,
+  'stretch': stretch,
+);
+
 @mixin breakpoint($name) {
   @media screen and (min-width: map-get($breakpoints, $name)) {
     @content;

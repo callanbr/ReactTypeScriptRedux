@@ -7,7 +7,7 @@ export const GridView = () => {
       <h1>12 column Grid!</h1>
       <Grid
         container
-        spacing="xs"
+        spacing="xl"
         justifyContent="center"
         alignItems="center"
         style={{ height: '200px', border: '2px solid black' }}
