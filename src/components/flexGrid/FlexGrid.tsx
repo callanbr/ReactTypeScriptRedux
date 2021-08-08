@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import cn from 'classnames';
-import { Props } from './grid.types';
-import styles from './grid.module.scss';
+import { Props } from './flexGrid.types';
+import styles from './flexGrid.module.scss';
 
-export const Grid: FC<Props> = ({
+export const FlexGrid: FC<Props> = ({
   children,
   container,
   raised,

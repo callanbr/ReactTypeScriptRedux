@@ -1,0 +1,45 @@
+@use 'sass:math';
+@use "variables";
+
+.Grid {
+  &Container {
+    display: grid;
+    // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  &Ruler {
+    border: 2px solid black;
+  }
+  &Ruler > * {
+    border: 2px solid red;
+  }
+
+  @for $i from 1 to 13 {
+    $template: (
+      'fr-#{$i}': repeat($i, 1fr),
+    );
+    @each $name, $value in $template {
+      &Template-#{$name} {
+        grid-template-columns: #{$value};
+      }
+    }
+  }
+
+  @each $name, $value in variables.$gap {
+    &XGap-#{$name} {
+      grid-column-gap: #{$value};
+    }
+  }
+
+  @each $name, $value in variables.$gap {
+    &YGap-#{$name} {
+      grid-row-gap: #{$value};
+    }
+  }
+
+  @each $name, $value in variables.$gap {
+    &Gap-#{$name} {
+      grid-column-gap: #{$value};
+      grid-row-gap: #{$value};
+    }
+  }
+}

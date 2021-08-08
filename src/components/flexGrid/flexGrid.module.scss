@@ -1,5 +1,5 @@
 @use 'sass:math';
-@use "src/assets/styles" as styles;
+@use "variables";
 
 .Grid {
   &Container {
@@ -29,7 +29,7 @@
     }
   }
 
-  @include styles.breakpoint('sm') {
+  @include variables.breakpoint('sm') {
     @for $i from 1 to 13 {
       &-sm-#{$i} {
         flex-basis: math.div($i, 12) * 100%;
@@ -37,7 +37,7 @@
     }
   }
 
-  @include styles.breakpoint('md') {
+  @include variables.breakpoint('md') {
     @for $i from 1 to 13 {
       &-md-#{$i} {
         flex-basis: math.div($i, 12) * 100%;
@@ -45,7 +45,7 @@
     }
   }
 
-  @include styles.breakpoint('lg') {
+  @include variables.breakpoint('lg') {
     @for $i from 1 to 13 {
       &-lg-#{$i} {
         flex-basis: math.div($i, 12) * 100%;
@@ -53,7 +53,7 @@
     }
   }
 
-  @include styles.breakpoint('xl') {
+  @include variables.breakpoint('xl') {
     @for $i from 1 to 13 {
       &-xl-#{$i} {
         flex-basis: math.div($i, 12) * 100%;
@@ -61,7 +61,7 @@
     }
   }
 
-  @each $name, $value in styles.$spacing {
+  @each $name, $value in variables.$spacing {
     &FullWidth {
       margin: 0 0 -$value;
     }
@@ -70,19 +70,19 @@
     }
   }
 
-  @each $name, $value in styles.$justifyContent {
+  @each $name, $value in variables.$justifyContent {
     &JustifyContent-#{$name} {
       justify-content: $value;
     }
   }
 
-  @each $name, $value in styles.$alignItems {
+  @each $name, $value in variables.$alignItems {
     &AlignItems-#{$name} {
       align-items: $value;
     }
   }
 
-  @each $name, $value in styles.$alignSelf {
+  @each $name, $value in variables.$alignSelf {
     &AlignSelf-#{$name} {
       align-self: $value;
     }

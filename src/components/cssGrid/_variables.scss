@@ -1,0 +1,54 @@
+$spacing: (
+  'xs': 3px,
+  'sm': 6px,
+  'md': 12px,
+  'lg': 18px,
+  'xl': 24px,
+);
+
+$breakpoints: (
+  'col': 0,
+  'xs': 0,
+  'sm': 26em,
+  'md': 48em,
+  'lg': 64em,
+  'xl': 80em,
+);
+
+$justifyContent: (
+  'start': flex-start,
+  'end': flex-end,
+  'center': center,
+  'between': space-between,
+  'around': space-around,
+);
+
+$alignItems: (
+  'start': flex-start,
+  'end': flex-end,
+  'center': center,
+  'baseline': baseline,
+  'stretch': stretch,
+);
+
+$alignSelf: (
+  'start': flex-start,
+  'end': flex-end,
+  'center': center,
+  'baseline': baseline,
+  'stretch': stretch,
+);
+
+$gap: (
+  'xs': 0.25em,
+  'sm': 0.5em,
+  'md': 1em,
+  'lg': 2em,
+  'xl': 3em,
+);
+
+@mixin breakpoint($name) {
+  @media screen and (min-width: map-get($breakpoints, $name)) {
+    @content;
+  }
+}
