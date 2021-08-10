@@ -6,6 +6,16 @@
     display: grid;
     // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
+
+  &Item {
+    // display: block;
+  }
+  @for $i from 1 to 1000 {
+    &Area-#{$i} {
+      grid-area: area + $i;
+    }
+  }
+
   &Ruler {
     border: 2px solid black;
   }
@@ -26,20 +36,64 @@
 
   @each $name, $value in variables.$gap {
     &XGap-#{$name} {
-      grid-column-gap: #{$value};
+      column-gap: #{$value};
     }
   }
 
   @each $name, $value in variables.$gap {
     &YGap-#{$name} {
-      grid-row-gap: #{$value};
+      row-gap: #{$value};
     }
   }
 
   @each $name, $value in variables.$gap {
     &Gap-#{$name} {
-      grid-column-gap: #{$value};
-      grid-row-gap: #{$value};
+      gap: #{$value};
+    }
+  }
+  @for $i from 1 to 13 {
+    &-xs-#{$i},
+    &-col-#{$i} {
+      grid-template-columns: repeat($i, 1fr);
+    }
+  }
+
+  @include variables.breakpoint('sm') {
+    @for $i from 1 to 13 {
+      &-sm-#{$i} {
+        grid-template-columns: repeat($i, 1fr);
+      }
+    }
+  }
+
+  @include variables.breakpoint('md') {
+    @for $i from 1 to 13 {
+      &-md-#{$i} {
+        grid-template-columns: repeat($i, 1fr);
+      }
+    }
+  }
+
+  @include variables.breakpoint('lg') {
+    @for $i from 1 to 13 {
+      &-lg-#{$i} {
+        grid-template-columns: repeat($i, 1fr);
+      }
+    }
+  }
+
+  @include variables.breakpoint('xl') {
+    @for $i from 1 to 13 {
+      &-xl-#{$i} {
+        grid-template-columns: repeat($i, 1fr);
+      }
+    }
+  }
+
+  @for $i from 1 to 100 {
+    &Width-#{$i} {
+      width: #{$i}+ '%';
+      margin: auto;
     }
   }
 }

@@ -11,7 +11,6 @@ export const FlexGridView = () => {
         justifyContent="center"
         alignItems="center"
         fullWidth
-        ruler
       >
         <FlexGrid item xs={12} sm={6} md={4} lg={3} xl={2}>
           <Box>Box 1</Box>
