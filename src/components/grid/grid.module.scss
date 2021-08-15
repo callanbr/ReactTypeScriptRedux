@@ -1,0 +1,147 @@
+@use 'sass:math';
+@use "../../assets/styles/layout";
+@use "../../assets/styles/themes";
+@use "../../assets/styles/colors";
+
+.Grid {
+  &Container {
+    display: grid;
+    background-color: var(--theme-background);
+  }
+
+  &Breakpoint {
+    margin: auto;
+    @include layout.breakpoint('sm') {
+      max-width: 21em;
+      padding: 16px;
+    }
+    @include layout.breakpoint('md') {
+      max-width: 38em;
+    }
+    @include layout.breakpoint('lg') {
+      max-width: 51em;
+    }
+    @include layout.breakpoint('xl') {
+      max-width: 64em;
+    }
+  }
+
+  &Raised {
+    background-color: rgb(var(--theme-container));
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 2px 4px 12px rgb(var(--theme-text), 0.1);
+    transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
+    @at-root .GridContainer {
+      padding: 16px;
+    }
+  }
+  &RaisedHover {
+    background-color: rgb(var(--theme-container)) !important;
+    font-size: inherit;
+    text-decoration: none;
+    color: inherit;
+    text-align: inherit;
+    border: inherit;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 2px 4px 12px rgb(var(--theme-text), 0.1);
+    transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
+    @at-root .GridContainer {
+      padding: 16px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 2px 4px 16px rgb(var(--theme-text), 0.2);
+      transform: scale3d(1.01, 1.01, 1.01);
+    }
+  }
+
+  @for $i from 1 to 1000 {
+    &Area-#{$i} {
+      grid-area: area + $i;
+    }
+  }
+
+  &Ruler {
+    border: 2px solid black;
+  }
+  &Ruler > * {
+    border: 2px solid red;
+  }
+
+  @for $i from 1 to 13 {
+    $template: (
+      'fr-#{$i}': repeat($i, 1fr),
+    );
+    @each $name, $value in $template {
+      &Template-#{$name} {
+        grid-template-columns: #{$value};
+      }
+    }
+  }
+
+  @each $name, $value in layout.$gap {
+    &XGap-#{$name} {
+      column-gap: #{$value};
+    }
+  }
+
+  @each $name, $value in layout.$gap {
+    &YGap-#{$name} {
+      row-gap: #{$value};
+    }
+  }
+
+  @each $name, $value in layout.$gap {
+    &Gap-#{$name} {
+      gap: #{$value};
+    }
+  }
+  @for $i from 1 to 13 {
+    &-xs-#{$i},
+    &-col-#{$i} {
+      grid-template-columns: repeat($i, 1fr);
+    }
+  }
+
+  @include layout.breakpoint('sm') {
+    @for $i from 1 to 13 {
+      &-sm-#{$i} {
+        grid-template-columns: repeat($i, 1fr);
+      }
+    }
+  }
+
+  @include layout.breakpoint('md') {
+    @for $i from 1 to 13 {
+      &-md-#{$i} {
+        grid-template-columns: repeat($i, 1fr);
+      }
+    }
+  }
+
+  @include layout.breakpoint('lg') {
+    @for $i from 1 to 13 {
+      &-lg-#{$i} {
+        grid-template-columns: repeat($i, 1fr);
+      }
+    }
+  }
+
+  @include layout.breakpoint('xl') {
+    @for $i from 1 to 13 {
+      &-xl-#{$i} {
+        grid-template-columns: repeat($i, 1fr);
+      }
+    }
+  }
+
+  @for $i from 1 to 101 {
+    &Width-#{$i} {
+      width: #{$i}+ '%';
+      margin: auto;
+    }
+  }
+}

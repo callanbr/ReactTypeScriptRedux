@@ -1,0 +1,27 @@
+$ScreenHeight: (
+  'sm': 35vh,
+  'md': 50vh,
+  'lg': 75vh,
+  'full': 100vh,
+);
+
+.Header {
+  overflow: hidden;
+  position: relative;
+  background-position: center center;
+  background-size: cover;
+  border: 0;
+  &Full {
+    height: 100vh;
+  }
+  &Half {
+    height: 60vh;
+    min-height: 400px;
+  }
+
+  @for $i from 1 to 101 {
+    &Size-#{$i} {
+      height: #{$i}+ 'vh';
+    }
+  }
+}

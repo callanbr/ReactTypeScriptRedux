@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { useRootDispatch, useRootState } from '../../redux/hooks';
-import { changeTheme } from '../../redux/features/themeSlice';
-import styles from './themeSwitcher.module.scss';
+import { changeTheme, Themes } from '../../redux/features/themeSlice';
+
+// include theme slider prop for testing or user interface?
 
 const ThemeSwitcher = () => {
   const rootTheme = useRootState((state) => state.themeChanger.currentTheme);
@@ -15,15 +16,11 @@ const ThemeSwitcher = () => {
 
   return (
     <>
-      <button onClick={() => handleThemeChange(styles.themeDefault)}>
-        Toggle Default
-      </button>
-      <button onClick={() => handleThemeChange(styles.themeDark)}>
-        Toggle Dark
-      </button>
-      <button onClick={() => handleThemeChange(styles.themeColorful)}>
-        Toggle Colorful
-      </button>
+      {Themes.map((theme, idx) => (
+        <button key={idx} onClick={() => handleThemeChange(theme.style)}>
+          Toggle {theme.name}
+        </button>
+      ))}
     </>
   );
 };

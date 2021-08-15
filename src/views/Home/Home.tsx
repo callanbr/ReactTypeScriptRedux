@@ -1,32 +1,87 @@
-import placeholderImage from '../../assets/images/placeholder.jpg';
+import { Grid } from '../../components/grid/Grid';
+import { Header } from '../../components/header/Header';
+import styles from '../../app.module.scss';
+import { useRootState } from '../../redux/hooks';
+import ThemeSwitcher from '../../components/themeSwitcher/ThemeSwitcher';
 
-export const HomeView = () => {
-  const title = 'React Boilerplate';
+const lightImage = require('../../assets/images/placeholderLight.png');
+const darkImage = require('../../assets/images/placeholderDark.png');
+
+export const Home = () => {
+  const storedTheme = useRootState((state) => state.themeChanger.currentTheme);
+  const headerImage = storedTheme == styles.themeLight ? lightImage : darkImage;
+
   return (
     <>
-      <h1>{title}</h1>
-      <h4>Environment Variables</h4>
-      <ul>
-        <li>- Environment: {process.env.NODE_ENV}</li>
-        <li>- Server: {process.env.server}</li>
-      </ul>
-      <h4>Features</h4>
-      <ul>
-        <li>- TypeScript</li>
-        <li>- Redux toolkit</li>
-        <li>- Babel</li>
-        <li>- Webpack</li>
-        <li>- SCSS Modules</li>
-        <li>- React Testing Library</li>
-        <li>- Jest</li>
-        <li>- ESLint</li>
-        <li>- Prettier</li>
-      </ul>
-      <img
-        src={placeholderImage}
-        alt="placeholder"
-        style={{ width: '200px' }}
-      />
+      <Header size={60} image={headerImage} title="Boilerplate"></Header>
+      <ThemeSwitcher />
+      <Grid breakpoint>
+        <Grid
+          id="GridContainer"
+          container
+          gap="md"
+          gridTemplate
+          gridXS={[[1], [2], [3], [4], [5], [6]]}
+          gridSM={[
+            [1, 1],
+            [2, 3],
+            [4, 5],
+            [6, 6],
+          ]}
+          gridMD={[
+            [1, 2],
+            [3, 4],
+            [5, 6],
+          ]}
+          gridLG={[
+            [1, 1, 2],
+            [3, 4, 2],
+            [3, 5, 5],
+            [3, 5, 5],
+            [6, 6, 6],
+          ]}
+          gridXL={[
+            [1, 1, 2, 2],
+            [3, 4, 2, 2],
+            [3, 5, 5, 5],
+            [3, 5, 5, 5],
+            [3, 6, 6, 6],
+          ]}
+        >
+          <Grid item raised area={1}>
+            <li>Environment: {process.env.NODE_ENV}</li>
+            <li>Server: {process.env.server}</li>
+          </Grid>
+          <Grid
+            item
+            area={2}
+            clickType="button"
+            onClick={() => {
+              alert('Clicked!');
+            }}
+          >
+            Button Alert Clicked!
+          </Grid>
+          <Grid
+            item
+            area={3}
+            clickType="link"
+            href="https://www.google.com/"
+            target="_blank"
+          >
+            Link to Google.com
+          </Grid>
+          <Grid item area={4} clickType="routerLink" to="/counter">
+            Router Link to Counter
+          </Grid>
+          <Grid item raised area={5}>
+            Raised Box
+          </Grid>
+          <Grid item area={6}>
+            Not Raised
+          </Grid>
+        </Grid>
+      </Grid>
     </>
   );
 };

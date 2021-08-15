@@ -1,11 +1,27 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import styles from '../../app.module.scss';
+
+export const Themes = [
+  {
+    name: 'Light',
+    style: styles.themeLight,
+  },
+  {
+    name: 'Dark',
+    style: styles.themeDark,
+  },
+  {
+    name: 'Custom',
+    style: styles.themeCustom,
+  },
+];
 
 interface ThemeState {
   currentTheme: string;
 }
 
 const storedTheme = localStorage.getItem('themeColor');
-const currentThemeColor = storedTheme ? storedTheme : '';
+const currentThemeColor = storedTheme ? storedTheme : Themes[0].style;
 
 const initialState: ThemeState = {
   currentTheme: currentThemeColor,

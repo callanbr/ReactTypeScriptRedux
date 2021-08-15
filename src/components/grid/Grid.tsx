@@ -1,12 +1,16 @@
 import { FC } from 'react';
 import cn from 'classnames';
-import { Props } from './cssGrid.types';
-import styles from './cssGrid.module.scss';
+import { Props } from './grid.types';
+import styles from './grid.module.scss';
 import { GridTempStyle } from './GridTemplateAreas';
+import { Link } from 'react-router-dom';
 
-export const CssGrid: FC<Props> = ({
+export const Grid: FC<Props> = ({
   children,
   container,
+  breakpoint,
+  clickType,
+  raised,
   template,
   ruler,
   xGap,
@@ -32,6 +36,9 @@ export const CssGrid: FC<Props> = ({
   const classNames = cn({
     [styles.GridContainer]: container,
     [styles.GridItem]: item,
+    [styles.GridBreakpoint]: breakpoint,
+    [styles.GridRaisedHover]: clickType,
+    [styles.GridRaised]: raised,
     [styles[`GridTemplate-${template}`]]: template,
     [styles.GridRuler]: ruler,
     [styles[`GridXGap-${xGap}`]]: xGap,
@@ -51,13 +58,22 @@ export const CssGrid: FC<Props> = ({
     ? GridTempStyle(gridXS, gridSM, gridMD, gridLG, gridXL)
     : {};
 
+  const ElementToRender =
+    clickType === 'button'
+      ? 'button'
+      : clickType === 'routerLink'
+      ? Link
+      : clickType === 'link'
+      ? 'a'
+      : 'div';
+
   return (
-    <div
+    <ElementToRender
       className={classNames}
       {...props}
       style={{ ...props.style, ...GridTemplate }}
     >
       {children}
-    </div>
+    </ElementToRender>
   );
 };

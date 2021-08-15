@@ -1,17 +1,71 @@
-$lightColor: #f5f5f5;
-$darkColor: #212121;
+:root {
+  // default colors
+  --white: rgb(255, 255, 255);
+  --black: rgb(0, 0, 0);
 
-$default-text: rgb(184, 79, 79);
-$default-color: rgb(254, 243, 239);
-$default-background: rgb(236, 255, 254);
-$default-accent: rgb(244, 226, 220);
+  --lightest-gray: 250, 250, 250;
+  --lighter-gray: 245, 245, 247;
+  --light-gray: rgb(213, 213, 213);
+  --grey: rgb(134, 134, 134);
+  --dark-gray: rgb(110, 110, 110);
+  --darker-gray: 50, 50, 50;
+  --darkest-gray: 30, 30, 30;
 
-$dark-text: rgb(227, 182, 255);
-$dark-color: rgb(24, 33, 83);
-$dark-background: rgb(7, 6, 23);
-$dark-accent: rgb(239, 145, 159);
+  --light-red: rgb(217, 105, 131);
+  --red: rgb(231, 62, 69);
+  --dark-red: rgb(182, 49, 47);
+  --muted-red: rgb(209, 110, 128);
 
-$colorful-text: rgb(183, 100, 118);
-$colorful-color: rgb(220, 171, 47);
-$colorful-background: rgb(113, 196, 175);
-$colorful-accent: rgb(214, 143, 157);
+  --light-blue: rgb(227, 238, 250);
+  --blue: 45, 115, 219;
+  --dark-blue: rgb(24, 56, 89);
+  --muted-blue: rgb(72, 111, 179);
+
+  --light-yellow: rgb(244, 239, 211);
+  --yellow: rgb(252, 229, 83);
+  --dark-yellow: rgb(229, 182, 62);
+  --muted-yellow: rgb(249, 230, 155);
+
+  --light-purple: rgb(205, 198, 243);
+  --purple: rgb(158, 76, 246);
+  --dark-purple: rgb(92, 76, 103);
+  --muted-purple: rgb(159, 153, 205);
+
+  --light-green: rgb(227, 239, 215);
+  --green: rgb(186, 251, 79);
+  --dark-green: rgb(55, 125, 37);
+  --muted-green: rgb(129, 200, 89);
+
+  --light-orange: rgb(236, 208, 177);
+  --orange: rgb(232, 98, 60);
+  --dark-orange: rgb(179, 82, 35);
+  --muted-orange: rgb(230, 150, 94);
+
+  //Custom colors
+  --background-red: 40;
+  --background-green: 120;
+  --background-blue: 255;
+
+  --container-red: 255;
+  --container-green: 20;
+  --container-blue: 70;
+
+  --text-red: 20;
+  --text-green: 25;
+  --text-blue: 30;
+
+  // Theme colors
+  --light-background: var(--white);
+  --light-container: var(--lightest-gray);
+  --light-text: var(--darkest-gray);
+
+  --dark-background: var(--black);
+  --dark-container: var(--darkest-gray);
+  --dark-text: var(--lighter-gray);
+
+  --custom-background: var(--background-red), var(--background-green),
+    var(--background-blue);
+  --custom-container: var(--container-red), var(--container-green),
+    var(--container-blue);
+  --custom-text: var(--text-red), var(--text-green), var(--text-blue);
+}

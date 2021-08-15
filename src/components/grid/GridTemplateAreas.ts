@@ -1,5 +1,5 @@
 import { useWindowSize } from '../../hooks/useWindowSize';
-import { gridTemplate } from './cssGrid.types';
+import { gridTemplate } from './grid.types';
 
 const changeGridFormat = (gridArray: gridTemplate) => {
   if (gridArray !== undefined) {
