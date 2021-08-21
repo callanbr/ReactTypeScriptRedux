@@ -1,10 +1,9 @@
-import { useWindowSize } from '../../hooks/useWindowSize';
+import { useWindowSize } from '../../hooks';
 import { gridTemplate } from './grid.types';
 
 const changeGridFormat = (gridArray: gridTemplate) => {
   if (gridArray !== undefined) {
-    const gridArrayToString = JSON.stringify(gridArray);
-    const removeCommas = gridArrayToString.replace(/,/g, ' ');
+    const removeCommas = JSON.stringify(gridArray).replace(/,/g, ' ');
     const removeBrackets = removeCommas.replace(/\[|]/g, "'").slice(1, -1);
     const addAreaText = removeBrackets.replace(/\d/g, (match) => {
       return `area${match}`;

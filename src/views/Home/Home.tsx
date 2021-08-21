@@ -1,8 +1,6 @@
-import { Grid } from '../../components/grid/Grid';
-import { Header } from '../../components/header/Header';
-import styles from '../../app.module.scss';
+import { Grid, Header, ThemeSwitcher } from '../../components';
 import { useRootState } from '../../redux/hooks';
-import ThemeSwitcher from '../../components/themeSwitcher/ThemeSwitcher';
+import styles from '../../app.module.scss';
 
 const lightImage = require('../../assets/images/placeholderLight.png');
 const darkImage = require('../../assets/images/placeholderDark.png');
@@ -13,7 +11,13 @@ export const Home = () => {
 
   return (
     <>
-      <Header size={60} image={headerImage} title="Boilerplate"></Header>
+      <Header
+        parallax
+        speed={0.2}
+        size={60}
+        image={headerImage}
+        title="Boilerplate"
+      ></Header>
       <ThemeSwitcher />
       <Grid breakpoint>
         <Grid

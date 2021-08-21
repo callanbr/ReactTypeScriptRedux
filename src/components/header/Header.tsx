@@ -1,6 +1,7 @@
-import { FC, ReactNode, useEffect, useState } from 'react';
+import { FC, ReactNode, useState } from 'react';
 import cn from 'classnames';
 import styles from './header.module.scss';
+import { useEventListener, useWindowSize } from '../../hooks';
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
@@ -9,6 +10,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   parallax?: boolean;
   parallaxTitle?: boolean;
   title?: string;
+  speed?: number;
 }
 
 export const Header: FC<Props> = ({
@@ -17,26 +19,20 @@ export const Header: FC<Props> = ({
   image,
   parallax,
   title,
+  speed = 0.1,
   ...props
 }) => {
   const [transform, setTransform] = useState('');
 
-  const resetTransform = () => {
-    const pageYOffset = window.pageYOffset;
-    const rate = Math.round(pageYOffset * 0.5); // negative for reverse
-    setTransform('translate3d(0,' + rate + 'px,0)');
-  };
+  const windowWidth = useWindowSize().widthEM;
 
-  useEffect(() => {
-    if (window.innerWidth >= 768) {
-      window.addEventListener('scroll', resetTransform);
+  const resetTransform = () => {
+    const rate = Math.round(window.pageYOffset * speed);
+    if (windowWidth >= 48) {
+      setTransform('translate3d(0,' + rate + 'px,0)');
     }
-    return function cleanup() {
-      if (window.innerWidth >= 768) {
-        window.removeEventListener('scroll', resetTransform);
-      }
-    };
-  });
+  };
+  useEventListener('scroll', resetTransform);
 
   const classNames = cn({
     [styles.Header]: true,

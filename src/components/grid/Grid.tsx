@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import cn from 'classnames';
 import { Props } from './grid.types';
+import cn from 'classnames';
 import styles from './grid.module.scss';
 import { GridTempStyle } from './GridTemplateAreas';
 import { Link } from 'react-router-dom';

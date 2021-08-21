@@ -1,3 +1,9 @@
+// 16px font size
+// 26em = 416px
+// 48em = 768px
+// 64em = 1024px
+// 80em = 1280px
+
 $breakpoints: (
   'col': 0,
   'xs': 0,
@@ -13,6 +19,12 @@ $gap: (
   'md': 1em,
   'lg': 2em,
   'xl': 3em,
+);
+
+$position: (
+  'fixed': fixed,
+  'absolute': absolute,
+  'relative': relative,
 );
 
 @mixin breakpoint($name) {

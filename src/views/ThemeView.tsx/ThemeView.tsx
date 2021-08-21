@@ -1,5 +1,4 @@
-import CustomTheme from '../../components/themeSwitcher/CustomTheme';
-import ThemeSwitcher from '../../components/themeSwitcher/ThemeSwitcher';
+import { ThemeSwitcher, CustomTheme } from '../../components';
 
 export const ThemeView = () => {
   return (

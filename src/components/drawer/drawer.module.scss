@@ -1,0 +1,158 @@
+@use "../../assets/styles/layout";
+
+.Drawer {
+  background-color: var(--theme-background);
+  border: 0;
+  border-radius: 0 0 3px 3px;
+  width: 100%;
+  box-shadow: 2px 4px 12px rgb(var(--theme-text), 0.1);
+  transition: all 150ms ease 0s;
+  &Ruler {
+    border: 2px solid red;
+  }
+
+  &Hidden {
+    &-top,
+    &-bottom,
+    &-left,
+    &-right {
+      transition: transform 400ms;
+      box-shadow: 2px 4px 12px rgb(var(--theme-text), 0.1);
+    }
+    &-top {
+      transform: translate(0%, -100%);
+    }
+    &-right {
+      transform: translate(100%, 0%);
+    }
+    &-bottom {
+      transform: translate(0%, 100%);
+    }
+    &-left {
+      transform: translate(-100%, 0%);
+    }
+  }
+
+  @for $i from 1 to 1000 {
+    &Size-left-#{$i},
+    &Size-right-#{$i} {
+      width: #{$i}px;
+    }
+    &Size-top-#{$i},
+    &Size-bottom-#{$i} {
+      height: #{$i}px;
+    }
+    &Open {
+      transform: translate(0);
+      &Toggle-left-top-#{$i},
+      &Toggle-left-bottom-#{$i} {
+        transform: translate(#{$i}px, 0%);
+      }
+      &Toggle-left-center-#{$i} {
+        transform: translate(#{$i}px, -50%) !important;
+      }
+      &Toggle-right-top-#{$i},
+      &Toggle-right-bottom-#{$i} {
+        transform: translate(-#{$i}px, 0%);
+      }
+      &Toggle-right-center-#{$i} {
+        transform: translate(-#{$i}px, -50%) !important;
+      }
+      &Toggle-top-left-#{$i},
+      &Toggle-top-right-#{$i} {
+        transform: translate(0%, #{$i}px);
+      }
+      &Toggle-top-center-#{$i} {
+        transform: translate(-50%, #{$i}px) !important;
+      }
+      &Toggle-bottom-left-#{$i},
+      &Toggle-bottom-right-#{$i} {
+        transform: translate(0%, -#{$i}px);
+      }
+      &Toggle-bottom-center-#{$i} {
+        transform: translate(-50%, -#{$i}px) !important;
+      }
+    }
+  }
+
+  @each $name, $value in layout.$position {
+    &Position-#{$name} {
+      position: $value;
+      z-index: 1100;
+    }
+  }
+
+  &Location-top {
+    top: 0;
+  }
+  &Location-bottom {
+    bottom: 0;
+  }
+  &Location-right {
+    top: 0;
+    right: 0;
+    height: 100vh;
+  }
+  &Location-left {
+    top: 0;
+    left: 0;
+    height: 100vh;
+  }
+
+  &Toggle {
+    transition: transform 400ms;
+    padding: 0.5rem;
+    color: inherit;
+    background-color: none;
+    border: 0;
+    border-radius: 0.5em;
+    cursor: pointer;
+    z-index: 1200;
+    @each $name, $value in layout.$position {
+      &Position-#{$name} {
+        position: $value;
+        z-index: 1200;
+      }
+    }
+    &Location-top-left,
+    &Location-left-top {
+      top: 0;
+      left: 0;
+    }
+    &Location-top-right,
+    &Location-right-top {
+      top: 0;
+      right: 0;
+    }
+    &Location-top-center {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &Location-bottom-left,
+    &Location-left-bottom {
+      bottom: 0;
+      left: 0;
+    }
+    &Location-bottom-right,
+    &Location-right-bottom {
+      bottom: 0;
+      right: -5px;
+    }
+    &Location-bottom-center {
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &Location-left-center {
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+    &Location-right-center {
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+  }
+}

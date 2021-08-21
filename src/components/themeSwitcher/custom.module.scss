@@ -1,4 +1,4 @@
-.Background {
+.background {
   background-color: rgb(var(--custom-background));
   --accessible-color: calc(
     (
@@ -16,7 +16,7 @@
     var(--accessible-color)
   );
 }
-.Container {
+.container {
   background-color: rgb(var(--custom-container));
   --accessible-color: calc(
     (
@@ -34,7 +34,7 @@
     var(--accessible-color)
   );
 }
-.Text {
+.text {
   color: rgb(var(--custom-text));
   --accessible-color: calc(
     (
@@ -57,60 +57,20 @@
   color: black;
 }
 
-// controls
-
-.controlsWrap {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 280px;
-  transform: translateX(100%);
-  background-color: inherit;
-  transition: transform 400ms;
-  box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.15);
-  background-color: white;
-}
-.open {
-  transform: translateX(0);
-}
-.controlsToggle {
-  position: absolute;
-  bottom: 1rem;
-  right: 0;
-  padding: 0.5rem 0.25rem 0.5rem 0.5rem;
-  color: inherit;
-  background-color: inherit;
-  border: none;
-  border-radius: 0.5em 0 0 0.5em;
-  box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.15),
-    inset 0 1px 0 rgba(0, 0, 0, 0.15), inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+.inputColor {
+  // border: 0;
+  // border-radius: 0 0 3px 3px;
+  // box-shadow: 2px 4px 12px rgb(var(--theme-text), 0.1);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   cursor: pointer;
-  z-index: 1000;
-}
-
-.controlsToggle svg {
-  display: block;
-  fill: currentColor;
-}
-
-.controls {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1.5rem;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-  display: block;
   padding: 0;
-  font-size: x-small;
-  text-transform: uppercase;
-  letter-spacing: 0.125em;
-  position: relative;
+  border: none;
+  background: none;
 }
+
 .controls input[type='range'] {
   position: relative;
   width: 100%;

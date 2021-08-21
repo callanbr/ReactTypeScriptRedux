@@ -29,7 +29,7 @@
   &Raised {
     background-color: rgb(var(--theme-container));
     border-radius: 18px;
-    padding: 25px;
+    padding: 10px;
     box-shadow: 2px 4px 12px rgb(var(--theme-text), 0.1);
     transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
     @at-root .GridContainer {
@@ -44,7 +44,7 @@
     text-align: inherit;
     border: inherit;
     border-radius: 18px;
-    padding: 25px;
+    padding: 10px;
     box-shadow: 2px 4px 12px rgb(var(--theme-text), 0.1);
     transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
     @at-root .GridContainer {
