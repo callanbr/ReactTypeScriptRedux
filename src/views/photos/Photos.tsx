@@ -1,4 +1,4 @@
-import { Photos } from '../../components/photos/Photos';
+import { Photos } from '../../components';
 
 export const PhotosView = () => {
   return (

@@ -1,70 +1,49 @@
-@use "sass:selector";
 @use "colors";
-@use 'interface';
+@use "interface";
 
-@mixin theme(
-  $name,
-  $primary-text,
-  $theme-text,
-  $theme-color,
-  $theme-background,
-  $theme-accent
-) {
-  .#{$name} {
-    background-color: $theme-background;
-    color: $primary-text;
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      color: $theme-text;
-    }
-    button,
-    input,
-    select,
-    a {
-      @include interface.default;
-      background-color: $theme-color;
-      border: 1px solid $theme-accent;
-      color: $primary-text;
-      text-decoration: none;
-      margin: auto 5px;
-    }
-    a:hover,
-    button:hover {
-      cursor: pointer;
-      background-color: $theme-accent;
-      border: 1px solid $theme-color;
-      color: $primary-text;
-    }
-  }
+.themeLight {
+  --theme-background: var(--light-background);
+  --theme-container: var(--light-container);
+  --theme-text: var(--light-text);
 }
 
-@include theme(
-  'themeDefault',
-  colors.$darkColor,
-  colors.$default-text,
-  colors.$default-color,
-  colors.$default-background,
-  colors.$default-accent
-);
+.themeDark {
+  --theme-background: var(--dark-background);
+  --theme-container: var(--dark-container);
+  --theme-text: var(--dark-text);
+}
 
-@include theme(
-  'themeDark',
-  colors.$lightColor,
-  colors.$dark-text,
-  colors.$dark-color,
-  colors.$dark-background,
-  colors.$dark-accent
-);
+.themeCustom {
+  --theme-background: var(--custom-background);
+  --theme-container: var(--custom-container);
+  --theme-text: var(--custom-text);
+}
 
-@include theme(
-  'themeColorful',
-  colors.$lightColor,
-  colors.$colorful-text,
-  colors.$colorful-color,
-  colors.$colorful-background,
-  colors.$colorful-accent
-);
+// variables need to be show as: 0, 0, 0 in order to be used in scss
+// must use rgb or rgba when using variables
+
+// defaults for site
+body {
+  background-color: var(--theme-background);
+  color: rgb(var(--theme-text));
+  transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
+  a {
+    color: rgb(var(--blue));
+    text-decoration: none;
+  }
+  button {
+    @include interface.buttons;
+    background-color: rgb(var(--theme-container));
+    color: rgb(var(--theme-text));
+    box-shadow: 2px 4px 12px rgb(var(--theme-text), 0.1);
+    &:hover {
+      background-color: rgba(var(--theme-container), 0.5);
+      box-shadow: 2px 4px 16px rgb(var(--theme-text), 0.2);
+    }
+  }
+  input,
+  select {
+    background-color: rgb(var(--theme-container));
+    color: rgb(var(--theme-text));
+  }
+}

@@ -28,10 +28,13 @@ Boilerplate for React TypeScript Redux
 
 ### Todo
 
-- Theme scss mixins / variables
-- Theme added to redux?
+
 - Clean scss setup
 - Folder Structure
   - Sections vs Components?
   - Shared Sections?
-- Change Box component to container or update grid container with "main container" features.
+- Nav
+- Drawer component refined
+- Custom Theme style update
+  - Set color properties for custom theme
+  - (background, container, text?, etc.)

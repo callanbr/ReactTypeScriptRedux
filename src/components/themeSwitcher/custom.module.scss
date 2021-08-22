@@ -1,0 +1,78 @@
+.background {
+  background-color: rgb(var(--custom-background));
+  --accessible-color: calc(
+    (
+        (
+            (
+                (var(--background-red) * 299) + (var(--background-green) * 587) +
+                  (var(--background-blue) * 114)
+              ) / 1000
+          ) - 128
+      ) * -1000
+  );
+  color: rgb(
+    var(--accessible-color),
+    var(--accessible-color),
+    var(--accessible-color)
+  );
+}
+.container {
+  background-color: rgb(var(--custom-container));
+  --accessible-color: calc(
+    (
+        (
+            (
+                (var(--container-red) * 299) + (var(--container-green) * 587) +
+                  (var(--container-blue) * 114)
+              ) / 1000
+          ) - 128
+      ) * -1000
+  );
+  color: rgb(
+    var(--accessible-color),
+    var(--accessible-color),
+    var(--accessible-color)
+  );
+}
+.text {
+  color: rgb(var(--custom-text));
+  --accessible-color: calc(
+    (
+        (
+            (
+                (var(--text-red) * 299) + (var(--text-green) * 587) +
+                  (var(--text-blue) * 114)
+              ) / 1000
+          ) - 128
+      ) * -1000
+  );
+  background-color: rgb(
+    var(--accessible-color),
+    var(--accessible-color),
+    var(--accessible-color)
+  );
+}
+
+.range {
+  color: black;
+}
+
+.inputColor {
+  // border: 0;
+  // border-radius: 0 0 3px 3px;
+  // box-shadow: 2px 4px 12px rgb(var(--theme-text), 0.1);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.controls input[type='range'] {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
