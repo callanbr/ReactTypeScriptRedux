@@ -42,17 +42,17 @@
   --muted-orange: rgb(230, 150, 94);
 
   //Custom colors
-  --background-red: 40;
-  --background-green: 120;
-  --background-blue: 255;
+  --background-r: 40;
+  --background-g: 120;
+  --background-b: 255;
 
-  --container-red: 255;
-  --container-green: 20;
-  --container-blue: 70;
+  --container-r: 255;
+  --container-g: 20;
+  --container-b: 70;
 
-  --text-red: 20;
-  --text-green: 25;
-  --text-blue: 30;
+  --text-r: 20;
+  --text-g: 25;
+  --text-b: 30;
 
   // Theme colors
   --light-background: var(--white);
@@ -63,9 +63,8 @@
   --dark-container: var(--darkest-gray);
   --dark-text: var(--lighter-gray);
 
-  --custom-background: var(--background-red), var(--background-green),
-    var(--background-blue);
-  --custom-container: var(--container-red), var(--container-green),
-    var(--container-blue);
-  --custom-text: var(--text-red), var(--text-green), var(--text-blue);
+  --custom-background: var(--background-r), var(--background-g),
+    var(--background-b);
+  --custom-container: var(--container-r), var(--container-g), var(--container-b);
+  --custom-text: var(--text-r), var(--text-g), var(--text-b);
 }
