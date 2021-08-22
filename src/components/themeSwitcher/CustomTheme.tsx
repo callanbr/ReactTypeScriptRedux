@@ -3,111 +3,45 @@ import { Drawer, Grid } from '..';
 import { HexToRgb, RgbToHex } from '../../helpers';
 import styles from './custom.module.scss';
 
+// Create slice for custom theme.
+// Own slice or added to themeSlice?
+
 const ThemeOptions = ['background', 'container', 'text'];
+const root = document.documentElement;
+
+// Create functions to get and set css PropertyValues?
+// If so - save in helpers for use in other components
 
 export const CustomTheme = () => {
-  const [themeHex, setThemeHex] = useState({});
-
-  // useEffect(() => {
-  //   const colorElement: NodeListOf<HTMLInputElement> =
-  //     document.querySelectorAll(`.${styles.inputColor}`);
-
-  //   for (let colorIdx = 0; colorIdx < colorElement.length; colorIdx++) {
-  //     const colorItem: HTMLInputElement = colorElement[colorIdx];
-
-  //     if (colorItem !== null) {
-  //       colorElement[0].defaultValue = themeHex.background;
-  //       colorElement[1].defaultValue = themeHex.container;
-  //       colorElement[2].defaultValue = themeHex.text;
-  //     }
-  //   }
-  // }, [themeHex]);
-
-  // useEffect(() => {
-  //   const computedStyles = getComputedStyle(document.body);
-  //   const root = document.documentElement;
-  //   const rangeElement: NodeListOf<HTMLInputElement> =
-  //     document.querySelectorAll(`.${styles.range}`);
-
-  //   //set rgb for background, container, and text to theme state
-  //   const functionToSetTheme = () => {
-  //     setThemeHex({
-  //       background: RgbToHex(
-  //         parseInt(rangeElement[0].value),
-  //         parseInt(rangeElement[1].value),
-  //         parseInt(rangeElement[2].value)
-  //       ),
-  //       container: RgbToHex(
-  //         parseInt(rangeElement[3].value),
-  //         parseInt(rangeElement[4].value),
-  //         parseInt(rangeElement[5].value)
-  //       ),
-  //       text: RgbToHex(
-  //         parseInt(rangeElement[6].value),
-  //         parseInt(rangeElement[7].value),
-  //         parseInt(rangeElement[8].value)
-  //       ),
-  //     });
-  //   };
-
-  //   //set rgb sliders to themeHex value if changed
-  //   const inputColorChange = () => {
-  //     const bg = HexToRgb(themeHex.background);
-  //     const c = HexToRgb(themeHex.container);
-  //     const t = HexToRgb(themeHex.text);
-
-  //     function getKeyByValue(object, value) {
-  //       return Object.keys(object).find((key) => object[key] === value);
-  //     }
-
-  //     if (!bg) {
-  //       return;
-  //     } else {
-  //       root.style.setProperty('--background-red', bg['red']);
-  //       root.style.setProperty('--background-green', bg['green']);
-  //       root.style.setProperty('--background-blue', bg['blue']);
-  //     }
-
-  //     if (!c) {
-  //       return;
-  //     } else {
-  //       root.style.setProperty('--container-red', c['red']);
-  //       root.style.setProperty('--container-green', c['green']);
-  //       root.style.setProperty('--container-blue', c['blue']);
-  //     }
-  //     if (!t) {
-  //       return;
-  //     } else {
-  //       root.style.setProperty('--text-red', t['red']);
-  //       root.style.setProperty('--text-green', t['green']);
-  //       root.style.setProperty('--text-blue', t['blue']);
-  //     }
-  //   };
-
-  //   for (let rangeIdx = 0; rangeIdx < rangeElement.length; rangeIdx++) {
-  //     const rangeItem: HTMLInputElement = rangeElement[rangeIdx];
-  //     const initialRangeValue = parseInt(
-  //       getComputedStyle(document.body).getPropertyValue('--' + rangeItem.name)
-  //     );
-  //     rangeItem.value = `${initialRangeValue}`;
-
-  //     rangeItem.addEventListener('input', function (this: HTMLInputElement) {
-  //       root.style.setProperty('--' + this.name, this.value);
-  //       rangeElement[rangeIdx].value = `${this.value}`;
-  //     });
-
-  //     // functionToSetTheme();
-
-  //     inputColorChange();
-  //   }
-  // }, [themeHex.background, themeHex.container, themeHex.text]); //themeHex.background, themeHex.container, themeHex.text
-
   useEffect(() => {
-    const colorElement: NodeListOf<HTMLInputElement> =
+    const colorInputElement: NodeListOf<HTMLInputElement> =
       document.querySelectorAll(`.${styles.inputColor}`);
 
-    for (let colorIdx = 0; colorIdx < colorElement.length; colorIdx++) {
-      const colorItem: HTMLInputElement = colorElement[colorIdx];
+    // loop through all color inputs from ThemeOptions (background, container, text)
+    for (let colorIdx = 0; colorIdx < colorInputElement.length; colorIdx++) {
+      const colorItem: HTMLInputElement = colorInputElement[colorIdx];
+
+      const storedBackground = JSON.parse(
+        localStorage.getItem(`${colorItem.name}`)
+      );
+
+      // Set variables to colors stored in localStorage if exists
+      if (storedBackground) {
+        // const root = document.documentElement;
+        root.style.setProperty(
+          '--' + colorItem.name + '-red',
+          storedBackground.red
+        );
+        root.style.setProperty(
+          '--' + colorItem.name + '-green',
+          storedBackground.green
+        );
+        root.style.setProperty(
+          '--' + colorItem.name + '-blue',
+          storedBackground.blue
+        );
+      }
+      // Set colorInput values to rgb of css variables
       const initialRed = getComputedStyle(document.body).getPropertyValue(
         '--' + colorItem.name + '-red'
       );
@@ -117,7 +51,8 @@ export const CustomTheme = () => {
       const initialBlue = getComputedStyle(document.body).getPropertyValue(
         '--' + colorItem.name + '-blue'
       );
-
+      // CSS variable are stored individually as red, green, and blue.
+      // Input type of color expects a hex value.
       const initialHex = RgbToHex(
         parseInt(initialRed),
         parseInt(initialGreen),
@@ -135,14 +70,14 @@ export const CustomTheme = () => {
     </Grid>
   );
 
-  // function to change css color variables.
-  // Need to save new values to local storage and apply on load
+  // Change css variable for session and save values to localStorage for next session
   const changeCSSColorVariables = (e) => {
     const rgb = HexToRgb(e.target.value);
-    const root = document.documentElement;
+    // const root = document.documentElement;
     root.style.setProperty('--' + e.target.name + '-red', rgb.red);
     root.style.setProperty('--' + e.target.name + '-green', rgb.green);
     root.style.setProperty('--' + e.target.name + '-blue', rgb.blue);
+    localStorage.setItem(e.target.name, JSON.stringify(rgb));
   };
 
   return (

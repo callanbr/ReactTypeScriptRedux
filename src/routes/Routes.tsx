@@ -3,7 +3,7 @@ import { CounterView } from '../views/counter/Counter';
 import { Home } from '../views/home/Home';
 import { PhotosView } from '../views/photos/Photos';
 import { Testing } from '../views/testing/Testing';
-import { ThemeView } from '../views/ThemeView.tsx/ThemeView';
+import { ThemeView } from '../views/ThemeView/ThemeView';
 
 export const Routes = () => {
   return (
