@@ -10,7 +10,7 @@ export const useTheme = () => {
   for (let i = 0; i < CustomThemeOptions.length; i++) {
     const themeItem = CustomThemeOptions[i];
     const storedCustomTheme = JSON.parse(`${localStorage.getItem(themeItem)}`);
-    console.log(storedCustomTheme);
+
     if (storedCustomTheme) {
       root.style.setProperty(`--${themeItem}-r`, storedCustomTheme.r);
       root.style.setProperty(`--${themeItem}-g`, storedCustomTheme.g);
