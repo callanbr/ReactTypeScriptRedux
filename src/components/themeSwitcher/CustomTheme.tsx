@@ -135,7 +135,9 @@ export const CustomTheme = () => {
     </Grid>
   );
 
-  const changeRangeFromDefaultValue = (e) => {
+  // function to change css color variables.
+  // Need to save new values to local storage and apply on load
+  const changeCSSColorVariables = (e) => {
     const rgb = HexToRgb(e.target.value);
     const root = document.documentElement;
     root.style.setProperty('--' + e.target.name + '-red', rgb.red);
@@ -166,7 +168,7 @@ export const CustomTheme = () => {
                   name={`${theme}`}
                   className={styles.inputColor}
                   type="color"
-                  onChange={(e) => changeRangeFromDefaultValue(e)}
+                  onChange={(e) => changeCSSColorVariables(e)}
                 />
                 {theme}
               </h3>
