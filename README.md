@@ -38,3 +38,29 @@ Boilerplate for React TypeScript Redux
 - Custom Theme style update
   - Set color properties for custom theme
   - (background, container, text?, etc.)
+
+
+### Components
+- Create components and add a nav link called components
+  - This link should drop down to different demos of the components
+- List of components
+  - Layout
+    - Container
+    - Grid
+    - Etc.
+  - Inputs
+    - Button
+    - Sliders?
+    - etc.
+  - Navigation
+    - Drawer
+    - Navbar
+    - etc.
+  - Other
+    - Alert
+    - Modal
+    - Theme?
+    - etc.
+
+
+- Future add to personal package to install and use for personal use?
